@@ -1,6 +1,8 @@
-import React from "react";
+import { useState } from "react";
 
 const RightSidebar = () => {
+  const [titleFontSize, setTitleFontSize] = useState(2);
+  const [contentFontSize, setContentFontSize] = useState(2);
   return (
     <div className="ml-[190px]">
       <div className="drawer lg:drawer-open">
@@ -22,7 +24,106 @@ const RightSidebar = () => {
           ></label>
           <ul className=" bg-primary border text-base-content min-h-full w-60 p-4">
             {/* Sidebar content here */}
-            <li> Right Side Bar</li>
+            {/* Card Title Font and Other */}
+            <li>
+              <h2 className="text-lg font-bold"> Title</h2>
+              <p className="text-lg font-medium mt-2">
+                font Size : {titleFontSize}
+              </p>
+              <label className="block mb-2">
+                <input
+                  type="range"
+                  min={0}
+                  max="100"
+                  value={titleFontSize}
+                  className="range"
+                  onChange={(e) => setTitleFontSize(e.target.value)}
+                  style={{ height: "20px" }}
+                />
+              </label>
+              {/* Title Bold  */}
+              <div className="form-control py-2">
+                <label className="flex items-center gap-2 cursor-pointer text-lg font-medium">
+                  <input type="checkbox" checked className="checkbox " />
+                  <span className="label-text font-bold">Bold</span>
+                </label>
+              </div>
+
+              {/* UpperCase  */}
+              <div className="form-control py-2">
+                <label className=" flex items-center gap-2 cursor-pointer text-lg font-medium">
+                  <input type="checkbox" className="checkbox " />
+                  <span className="label-text">UpperCase</span>
+                </label>
+              </div>
+            </li>
+
+            {/* Card Content Font and Other */}
+            <li className="border-t-2 my-3 ">
+              <h2 className="text-lg mt-4 font-bold"> Contents</h2>
+              <p className="text-lg font-medium mt-2">
+                font Size : {contentFontSize}
+              </p>
+              <label className="block mb-2">
+                <input
+                  type="range"
+                  min={0}
+                  max="100"
+                  value={contentFontSize}
+                  className="range"
+                  onChange={(e) => setContentFontSize(e.target.value)}
+                  style={{ height: "20px" }}
+                />
+              </label>
+              {/* Title Bold  */}
+              <div className="form-control py-2">
+                <label className="flex items-center gap-2 cursor-pointer text-lg font-medium">
+                  <input type="checkbox" checked className="checkbox " />
+                  <span className="label-text font-bold">Bold</span>
+                </label>
+              </div>
+
+              {/* UpperCase  */}
+              <div className="form-control py-2">
+                <label className=" flex items-center gap-2 cursor-pointer text-lg font-medium">
+                  <input type="checkbox" className="checkbox " />
+                  <span className="label-text">UpperCase</span>
+                </label>
+              </div>
+            </li>
+
+            {/* Card Button Font and Other */}
+            <li className="border-t-2 my-2">
+              <h2 className="text-lg font-bold"> Button</h2>
+              <p className="text-lg font-medium mt-2">
+                font Size : {contentFontSize}
+              </p>
+              <label className="block mb-2">
+                <input
+                  type="range"
+                  min={0}
+                  max="100"
+                  value={contentFontSize}
+                  className="range"
+                  onChange={(e) => setContentFontSize(e.target.value)}
+                />
+              </label>
+              {/* Title Bold  */}
+              {/* <div className="form-control py-2">
+                <label className="flex items-center gap-2 cursor-pointer text-lg font-medium">
+                  <input type="checkbox" checked className="checkbox " />
+                  <span className="label-text font-bold">Bold</span>
+                </label>
+              </div> */}
+
+              {/* UpperCase  */}
+              {/* <div className="form-control py-2">
+                <label className=" flex items-center gap-2 cursor-pointer text-lg font-medium">
+                  <input type="checkbox" className="checkbox " />
+                  <span className="label-text">UpperCase</span>
+                </label>
+              </div> */}
+            </li>
           </ul>
         </div>
       </div>

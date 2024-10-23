@@ -7,7 +7,7 @@ const CardGenerator = () => {
   const [cardContentColor, setCardContentColor] = useState("#e89569");
   const [buttonTextColor, setButtonTextColor] = useState("#212702");
   const [buttonBgColor, setButtonBgColor] = useState("#3F00E7");
-  const [width, setWidth] = useState("10");
+  const [rangeValue, setRangeValue] = useState(52);
 
   const generator = () => {
     return `
@@ -32,6 +32,21 @@ const CardGenerator = () => {
      `;
   };
 
+  // Mapping function to get Tailwind width class based on range value
+  const getWidthClass = (value) => {
+    if (value <= 10) return "w-24";
+    if (value <= 20) return "w-28";
+    if (value <= 30) return "w-40";
+    if (value <= 40) return "w-44";
+    if (value <= 50) return "w-52";
+    if (value <= 60) return "w-56";
+    if (value <= 70) return "w-60";
+    if (value <= 80) return "w-64";
+    if (value <= 90) return "w-96";
+    return "w-full";
+  };
+
+  const widthClass = getWidthClass(rangeValue);
   return (
     <div className="grid grid-cols-1  lg:grid-cols-3 gap-5 bg-blue-50 ">
       <div>
@@ -58,17 +73,22 @@ const CardGenerator = () => {
 
               <li>
                 <h2 className="text-xl font-bold text-[#4285F4]"> Settings </h2>
-                <p className="text-lg font-medium mt-2"> width: w-{width}</p>
-                <label className="block mb-2 ">
-                  <input
-                    type="range"
-                    min="0"
-                    max="50"
-                    value={width}
-                    onChange={(e) => setWidth(e.target.value)}
-                    className="w-full cursor-pointer"
-                  />
-                </label>
+                <div>
+                  <p className="text-lg font-medium mt-2">
+                    Width: {widthClass}
+                  </p>
+                  <label className="block mb-2">
+                    <input
+                      type="range"
+                      min={0}
+                      max={100}
+                      value={rangeValue}
+                      className="range"
+                      onChange={(e) => setRangeValue(Number(e.target.value))}
+                      style={{ height: "20px" }}
+                    />
+                  </label>
+                </div>
                 {/* check Box Area rounded  */}
                 <div className="form-control py-2">
                   <label className=" flex items-center gap-2 cursor-pointer text-lg font-medium">

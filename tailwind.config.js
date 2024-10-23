@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      animation: {
+        "spin-slow": "spin 12s linear infinite",
+      },
       colors: {
         primary: "#FFFFFF", // Teal Blue
         secondary: "#D3D3D3", // Light Gray

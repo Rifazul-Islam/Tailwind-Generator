@@ -8,12 +8,12 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #008640; /* Dark purple color for the thumb */
+  background: #4285f4; /* Dark purple color for the thumb */
   border-radius: 5px; /* Rounded corners */
 }
 
 /* For Firefox */
 .custom-scrollbar {
   scrollbar-width: thin; /* Set to 'thin' for a smaller scrollbar */
-  scrollbar-color: #008640 #d7ebc5; /* Thumb color and track color */
+  scrollbar-color: #4285f4 #d7ebc5; /* Thumb color and track color */
 }

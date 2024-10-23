@@ -47,10 +47,10 @@ const Navber = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn bg-[#4285F4] hover:bg-[#0c59d5] text-white lg:flex hidden">
+        <a className="btn btn-sm bg-[#4285F4] hover:bg-[#0c59d5] text-white lg:flex hidden">
           Get Started
         </a>
-        <NavLink className=" text-[22px] font-bold flex lg:hidden">
+        <NavLink className="text-[22px] font-bold flex lg:hidden">
           <span className="text-[#6f9ce6]"> Genaretor</span>
         </NavLink>
       </div>
